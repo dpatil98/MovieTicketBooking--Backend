@@ -4,6 +4,7 @@ import cors from 'cors';
 import { MongoClient } from 'mongodb';
 import { theatersRouter } from './routes/theaters.js';
 import { moviesRouter } from './routes/movies.js';
+import { usersRouter } from './routes/users.js';
 
 
 const app = express();
@@ -53,6 +54,7 @@ app.get("/" , (request ,response) =>
 
 app.use("/theaters", theatersRouter );
 app.use("/movies", moviesRouter );
+app.use("/users", usersRouter );
 
 app.listen(PORT ,() => console.log("App is Started on Port :" ,PORT));
 
